@@ -7,6 +7,7 @@ app.use(cors());
 const events = [1, 2, 3, 4, 5]
 
 app.get('/events', (req, res) => {
+    console.log(req)
     res.send(events)
 })
 
