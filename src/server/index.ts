@@ -1,18 +1,19 @@
 import express from 'express';
 import cors from 'cors';
-import {users} from "../constans/users.ts";
 import bodyParser from "body-parser";
+import {users} from "../constans/users.ts";
+import {events} from "../constans/events.ts";
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const events = [1, 2, 3, 4, 5]
+const allEvents = events;
 const allUsers = users;
 
 app.get('/events', (req, res) => {
     console.log(req)
-    res.send(events)
+    res.send(allEvents)
 })
 
 app.post('/auth', (req, res) => {
