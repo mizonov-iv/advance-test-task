@@ -21,15 +21,19 @@
 
 <script lang="ts" setup>
 import {ref} from "vue";
+import {useUsersStore} from "../stores/usersStore";
+import {NewUser} from "../constans/users";
 
 const username = ref('admin');
-const password = ref('123456789')
+const password = ref('123456789');
+
+const usersStore = useUsersStore();
 
 const handleSubmit = () => {
-  const user = {
+  const user: NewUser = {
     username: username.value,
     password: password.value
   }
-  console.log(user)
+  usersStore.logIn(user);
 }
 </script>

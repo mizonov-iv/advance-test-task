@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
+import {useUsersStore} from "../stores/usersStore";
 
 
 export const router = createRouter({
@@ -10,7 +11,8 @@ export const router = createRouter({
             path: "/",
             component: HomeView,
             beforeEnter: () => {
-                if(1 > 0) {
+                const usersStore = useUsersStore();
+                if(!usersStore.currentUser) {
                     return {
                         path: "/login"
                     }
