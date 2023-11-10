@@ -3,6 +3,7 @@
 @import 'styles/normalize.css';
 @import 'styles/typography.css';
 @import 'styles/loginForm.css';
+@import 'styles/table.css';
 
 * {
   font-family: 'Roboto', sans-serif;

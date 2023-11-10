@@ -37,8 +37,3 @@
     background: #888888;
     color: white;
 }
-
-table, tr, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}

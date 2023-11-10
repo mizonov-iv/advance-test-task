@@ -17,6 +17,10 @@
       <td>{{ event.date }}</td>
       <td>{{ event.status }}</td>
       <td>{{ event.comment }}</td>
+      <div>
+        <button>click!</button>
+        <button>click</button>
+      </div>
     </tr>
   </table>
 

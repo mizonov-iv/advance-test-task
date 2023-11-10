@@ -1,0 +1,15 @@
+table, th, td {
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    margin: 15px auto;
+}
+
+tr, td {
+    padding: 10px;
+}
