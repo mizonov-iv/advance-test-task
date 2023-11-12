@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: darkslateblue;
+    color: white;
+}
+
+.nav-list {
+    display: flex;
+    padding: 15px;
+    list-style: none;
+}
+
+.nav-list-item {
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-username {
+    padding: 15px;
+    margin: 5px;
+    cursor: default;
+}

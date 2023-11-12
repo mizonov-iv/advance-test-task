@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from "body-parser";
 import {users} from "../constans/users.ts";
 import {events} from "../constans/events.ts";
+import {generateFormattedDate} from "../utils/dateFormatting.ts";
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,30 @@ const allUsers = users;
 app.get('/events', (req, res) => {
     console.log(req)
     res.send(allEvents)
+})
+
+app.put('/events', (req, res) => {
+    const index = allEvents.findIndex(index => index.id === req.body.id)
+
+    const existingEvent = allEvents[index]
+    allEvents[index] = {...existingEvent, ...req.body}
+    res.json(allEvents[index])
+})
+
+app.delete('/events', (req, res) => {
+    const index = allEvents.findIndex(index => index.id === req.body)
+    allEvents.splice(index, 1)
+    res.json(allEvents)
+})
+
+app.post('/events', (req, res) => {
+    const newEvent = {
+        ...req.body,
+        id: Math.round(Math.random()).toFixed(),
+        date: generateFormattedDate()
+    };
+    allEvents.push(newEvent)
+    res.json(allEvents)
 })
 
 app.post('/auth', (req, res) => {

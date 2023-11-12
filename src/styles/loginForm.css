@@ -28,6 +28,11 @@
     border: none
 }
 
+.login-error {
+    text-align: center;
+    margin: 0;
+}
+
 .login-btn {
     cursor: pointer;
     border-radius: 8px;

@@ -4,6 +4,8 @@
 @import 'styles/typography.css';
 @import 'styles/loginForm.css';
 @import 'styles/table.css';
+@import 'styles/eventsBtns.css';
+@import 'styles/navbar.css';
 
 * {
   font-family: 'Roboto', sans-serif;

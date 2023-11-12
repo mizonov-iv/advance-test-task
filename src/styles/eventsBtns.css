@@ -1,0 +1,11 @@
+.events-btns-wrapper {
+    display: flex;
+}
+
+.event-btn {
+    margin: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+}
