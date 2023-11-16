@@ -31,15 +31,24 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from 'vue';
+import {ref, computed} from 'vue';
 import {useUsersStore} from "../stores/usersStore";
 import {useEventsStore} from "../stores/eventsStore";
+import {required, lenght, validate} from "../utils/validation";
 
 const usersStore = useUsersStore();
 const eventsStore = useEventsStore();
 
-const username = ref(usersStore.currentUser.name)
+const username = ref(usersStore.currentUser.name);
+const usernameStatus = computed(() => {
+  return validate(username.value, [required])
+})
+
 const address = ref('');
+const addressStatus = computed(() => {
+  return validate(address.value, [required])
+})
+
 const comment = ref('');
 
 function handleSubmit () {
@@ -52,6 +61,10 @@ function handleSubmit () {
 
   eventsStore.addNewEvent(newEvent)
 }
+
+const isValid = computed(() => {
+  return (!usernameStatus.value.valid || !addressStatus.value.valid)
+})
 
 const error = ref('');
 </script>
