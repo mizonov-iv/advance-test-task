@@ -1,6 +1,7 @@
 import {defineStore} from "pinia";
 import axios from "axios";
 import {router} from "../router";
+import {events} from "../constans/events";
 
 export const useEventsStore = defineStore("eventsStore", {
     state: () => {
@@ -30,8 +31,11 @@ export const useEventsStore = defineStore("eventsStore", {
                 })
         },
         deleteEvent(eventID) {
-            axios.delete('http://localhost:8000/events', eventID)
+            console.log("eventID: ", eventID)
+
+            axios.delete(`http://localhost:8000/events/${eventID}`)
                 .then(response => {
+                    console.log(response)
                     this.allEvents = response.data
                 })
                 .catch(error => {

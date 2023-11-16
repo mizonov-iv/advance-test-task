@@ -9,12 +9,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const allEvents = events;
+let allEvents = events;
 const allUsers = users;
 
-app.get('/events', (req, res) => {
+app.get('/events/', (req, res) => {
     console.log(req)
-    res.send(allEvents)
+    res.json(allEvents)
 })
 
 app.put('/events', (req, res) => {
@@ -25,16 +25,17 @@ app.put('/events', (req, res) => {
     res.json(allEvents[index])
 })
 
-app.delete('/events', (req, res) => {
-    const index = allEvents.findIndex(index => index.id === req.body)
-    allEvents.splice(index, 1)
+app.delete('/events/:id', (req, res) => {
+    const itemId = parseInt(req.params.id);
+    const index = allEvents.findIndex(item => item.id === itemId)
+        allEvents.splice(index, 1)
     res.json(allEvents)
 })
 
 app.post('/events', (req, res) => {
     const newEvent = {
         ...req.body,
-        id: Math.round(Math.random()).toFixed(),
+        id: (Math.random() * 100).toFixed(),
         date: generateFormattedDate()
     };
     allEvents.push(newEvent)
