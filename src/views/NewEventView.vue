@@ -1,24 +1,33 @@
 <template>
   <h2>Добавить заказ</h2>
   <form class="login-form" @submit.prevent="handleSubmit">
-    <input
-        class="login-input"
-        type="text"
-        placeholder="Введите имя"
-        v-model="username"
-    >
-    <input
-        class="login-input"
-        type="text"
-        placeholder="Введите адресс"
-        v-model="address"
-    >
-    <input
-        class="login-input"
-        type="text"
-        placeholder="Оставьте комментарий"
-        v-model="comment"
-    >
+    <div class="input-field">
+      <input
+          class="login-input"
+          type="text"
+          v-model="username"
+          required
+      >
+      <label class="login-input__placeholder">Введите имя</label>
+    </div>
+    <div class="input-field">
+      <input
+          class="login-input"
+          type="text"
+          v-model="address"
+          required
+      >
+      <label class="login-input__placeholder">Введите адресс</label>
+    </div>
+    <div class="input-field">
+      <input
+          class="login-input"
+          type="text"
+          v-model="comment"
+          required
+      >
+      <label class="login-input__placeholder">Оставьте комментарий</label>
+    </div>
     <p class="login-error">{{error}}</p>
     <button
         class="login-btn"

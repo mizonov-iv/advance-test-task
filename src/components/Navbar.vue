@@ -6,7 +6,6 @@
       </li>
     </ul>
     <p class="nav-username">{{usersStore.currentUser.name}}</p>
-    <RouterLink class="nav-list-item nav-username" to="/login">Выйти</RouterLink>
   </nav>
 </template>
 
@@ -23,6 +22,10 @@ const navItems = [
   {
     name: 'Добавить заказ',
     path: '/addEvent'
-  }
+  },
+  {
+    name: 'Выйти',
+    path: '/login'
+  },
 ]
 </script>

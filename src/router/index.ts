@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 import {useUsersStore} from "../stores/usersStore";
-import HomeView from "../views/HomeView.vue";
+import HomeView from "../views/EventsView.vue";
 import LoginView from "../views/LoginView.vue";
 import NewEventView from "../views/NewEventView.vue";
 

@@ -23,3 +23,7 @@ nav {
     margin: 5px;
     cursor: default;
 }
+
+.nav-list-item.nav-username {
+    cursor: pointer;
+}

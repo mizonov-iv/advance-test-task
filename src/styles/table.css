@@ -13,6 +13,18 @@ tr, td {
     padding: 10px;
 }
 
+.td-sortable {
+    cursor: pointer;
+}
+
+.sort-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-top: -18px;
+}
+
 .completed {
-    background: darkseagreen;
+    background: rgb(143, 188, 143, 0.3);
 }
