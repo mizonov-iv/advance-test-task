@@ -24,6 +24,8 @@ defineProps<{
   event: object;
 }>();
 
+const emit = defineEmits(['delete'])
+
 const eventsStore = useEventsStore();
 
 function completeEvent (eventID) {
@@ -31,7 +33,6 @@ function completeEvent (eventID) {
 }
 
 function deleteEvent(eventID) {
-  eventsStore.deleteEvent(eventID)
+  emit('delete', eventID)
 }
-
 </script>

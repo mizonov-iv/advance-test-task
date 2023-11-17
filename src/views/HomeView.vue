@@ -24,20 +24,44 @@
       <EventsBtns
           v-if="usersStore.currentUser.role === 'ADMIN'"
           :event="event"
+          @delete="openDeleteModal"
       />
     </tr>
   </table>
   <h4 v-else>Активные заказы отсутсвуют</h4>
+
+  <DeleteModal
+      v-if="modal.show.value === true"
+      @delete="handleDelete"
+      :eventID="eventID"
+  />
+
 </template>
 
 <script lang="ts" setup>
+import {ref} from "vue";
 import {useEventsStore} from "../stores/eventsStore";
 import {useUsersStore} from "../stores/usersStore";
 import EventsBtns from "../components/EventsBtns.vue";
 import Navbar from "../components/Navbar.vue";
+import {useModal} from "../composables/modal";
+import DeleteModal from "../components/DeleteModal.vue"
 
 const eventsStore = useEventsStore();
 const usersStore = useUsersStore();
 
+const modal = useModal();
+const eventID = ref();
+
 eventsStore.getAllEvents();
+
+function openDeleteModal (eventID) {
+  console.log(typeof(eventID), eventID)
+  // eventID.value = eventID;
+  modal.showModal();
+}
+
+function handleDelete (eventID) {
+  eventsStore.deleteEvent(eventID)
+}
 </script>

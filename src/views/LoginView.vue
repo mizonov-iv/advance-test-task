@@ -1,29 +1,33 @@
 <template>
-  <h2>Log In</h2>
-
+  <h2>Авторизация</h2>
   <form class="login-form" @submit.prevent="handleSubmit">
-    <input
-        class="login-input"
-        type="text"
-        placeholder="enter username"
-        v-model="username"
-    >
-    <input
-        class="login-input"
-        type="password"
-        placeholder="enter password"
-        v-model="password"
-    >
+    <div class="input-field">
+      <input
+          class="login-input"
+          type="text"
+          v-model="username"
+          required
+      >
+      <label class="login-input__placeholder">Логин</label>
+    </div>
+    <div class="input-field">
+      <input
+          class="login-input"
+          type="password"
+          v-model="password"
+          required
+      >
+      <label class="login-input__placeholder">Пароль</label>
+    </div>
     <p class="login-error">{{error}}</p>
     <button
         class="login-btn"
         type="submit"
         :disabled="isValid"
     >
-      Log In
+      Войти
     </button>
   </form>
-
 </template>
 
 <script lang="ts" setup>

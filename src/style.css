@@ -6,6 +6,7 @@
 @import 'styles/table.css';
 @import 'styles/eventsBtns.css';
 @import 'styles/navbar.css';
+@import 'styles/modal.css';
 
 * {
   font-family: 'Roboto', sans-serif;
