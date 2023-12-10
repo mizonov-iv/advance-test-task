@@ -1,8 +1,10 @@
 nav {
     display: flex;
     justify-content: space-between;
-    background: darkslateblue;
+    background: #6750A4;
     color: white;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .nav-list {
@@ -16,6 +18,10 @@ nav {
     cursor: pointer;
     text-decoration: none;
     color: white;
+}
+
+.nav-list-item:hover {
+    border-bottom: 2px solid #ffffff;
 }
 
 .nav-username {

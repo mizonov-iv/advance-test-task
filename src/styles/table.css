@@ -1,12 +1,30 @@
+.events-wrapper {
+    background: #F0F5FF;
+    height: 100vh;
+    padding: 15px;
+}
+
+.orders-header {
+    text-align: center;
+}
+
 table, th, td {
     table-layout: fixed;
     border-collapse: collapse;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     text-align: center;
+
 }
 
 table {
     margin: 15px auto;
+    background: #F0F5FF;
+}
+
+.table-head {
+    background: #FAFAFA;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
 }
 
 tr, td {
@@ -26,5 +44,6 @@ tr, td {
 }
 
 .completed {
-    background: rgb(143, 188, 143, 0.3);
+    background: #B7EB8F;
+    color: #52C41A;
 }

@@ -13,7 +13,7 @@
     border: 1px solid darkgrey;
     max-width: 300px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,12 +29,13 @@
 }
 
 .modal-btn {
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 8px;
-    border: none;
-    background: darkgrey;
+    color: #6750A4;
+    background: #E6E0E9;
     width: 80px;
+    border: 2px solid rgba(29, 27, 32, 0.12);
 }
 
 .modal-btn:not(:last-child) {
@@ -42,6 +43,6 @@
 }
 
 .modal-btn:hover {
-    background: #888888;
+    background: #6750A4;
     color: white;
 }
